@@ -2,6 +2,8 @@
 
 Récupérer un token: https://www.digital.sncf.com/startup/api
 
+Info sur l'utilisation: https://gares.io/doku.php/sncf
+
 Liste des retards: https://api.sncf.com/v1/coverage/sncf/disruptions
 
 Liste des annulations: https://api.sncf.com/v1/coverage/sncf/traffic_reports

@@ -1,11 +1,12 @@
 <?php
 include 'vendor/autoload.php';
 use GuzzleHttp\Client;
+use Elasticsearch\ClientBuilder;
 
 //Load config
 (new Dotenv\Dotenv(__DIR__))->load();
 
-$client = new Client([
+$clientSncf = new Client([
     // Base URI is used with relative requests
     'base_uri' => 'https://api.sncf.com/v1/coverage/sncf/',
     // You can set any number of default request options.
@@ -14,10 +15,6 @@ $client = new Client([
     'auth' => [getenv('SNCF_TOKEN'), ''],
 ]);
 
-$url = 'traffic_reports';
+$clientElastic = ClientBuilder::create()->build();
 
-$response = $client->get('traffic_reports');
-$result = json_decode($response->getBody(), true);
-
-echo '<pre>';
-print_r($result);
+//print_r($result);
